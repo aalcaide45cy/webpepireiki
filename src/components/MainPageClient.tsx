@@ -63,9 +63,6 @@ export const MainPageClient: React.FC<MainPageClientProps> = ({ data }) => {
         therapies={data.therapies}
         preselectedService={preselectedService}
       />
-
-      {/* Acceso y guía para el cliente a Google Sheets */}
-      <GoogleSheetsBadge />
     </div>
   );
 };
