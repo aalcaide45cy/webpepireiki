@@ -1,4 +1,4 @@
-# Guía de Conexión: Google Sheets y Google Drive para "Aura Blanco y Negro"
+# Guía de Conexión: Google Sheets y Google Drive para "Blanco y Negro - Terapias Holísticas y Bienestar"
 
 Esta guía explica cómo la dueña del negocio o la persona encargada de la web puede actualizar textos, precios, fotos y reseñas sin tocar una sola línea de código.
 
@@ -6,7 +6,7 @@ Esta guía explica cómo la dueña del negocio o la persona encargada de la web 
 
 ## 1. Crear la Hoja en Google Sheets
 
-Crea una hoja de cálculo en Google Drive (por ejemplo, llamada `Web Aura - Contenidos`) y crea las siguientes 4 pestañas:
+Crea una hoja de cálculo en Google Drive (por ejemplo, llamada `Web Blanco y Negro - Contenidos`) y crea las siguientes 4 pestañas:
 
 ### Pestaña 1: `Terapias`
 Encabezados en la fila 1:
@@ -79,7 +79,7 @@ Para que al hacer cambios en la hoja no haya que esperar, creamos un botón en e
 ```javascript
 function onOpen() {
   var ui = SpreadsheetApp.getUi();
-  ui.createMenu('🌟 Web Aura')
+  ui.createMenu('🌟 Web Blanco y Negro')
     .addItem('🚀 Publicar Cambios en la Web', 'triggerDeployWeb')
     .addToUi();
 }
@@ -106,7 +106,7 @@ function triggerDeployWeb() {
 
 3. Pulsa **Guardar** (icono de disquete).
 4. Cierra la pestaña de Apps Script y recarga tu hoja de Google Sheets.
-5. Verás un nuevo menú arriba a la derecha: **"🌟 Web Aura"**.
+5. Verás un nuevo menú arriba a la derecha: **"🌟 Web Blanco y Negro"**.
 6. Cada vez que hagas cambios en precios o textos, pulsas **"🚀 Publicar Cambios en la Web"** y ¡listo!
 
 ---

@@ -15,7 +15,7 @@ const plusJakarta = Plus_Jakarta_Sans({
 });
 
 export const metadata: Metadata = {
-  title: "Aura Blanco y Negro · Terapias Holísticas & Bienestar",
+  title: "Blanco y Negro - Terapias Holísticas y Bienestar",
   description:
     "Espacio de sanación y bienestar integral: Quiromasaje terapéutico, Reiki Usui, Registros Akáshicos, Respiración consciente, talleres y armonización energética.",
   keywords: [
@@ -29,7 +29,7 @@ export const metadata: Metadata = {
     "bienestar",
   ],
   openGraph: {
-    title: "Aura Blanco y Negro · Terapias Holísticas & Bienestar",
+    title: "Blanco y Negro - Terapias Holísticas y Bienestar",
     description: "Reconecta con tu equilibrio natural: Quiromasaje, Reiki, Registros Akáshicos y Bienestar Holístico.",
     type: "website",
     locale: "es_ES",

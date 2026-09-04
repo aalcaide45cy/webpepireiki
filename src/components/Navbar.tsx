@@ -51,7 +51,7 @@ export const Navbar: React.FC<NavbarProps> = ({ config, onOpenBooking }) => {
                 {config.name}
               </span>
               <span className="text-xs text-[#5e7065] tracking-wider uppercase font-medium block">
-                Terapias Holísticas & Bienestar
+                Terapias Holísticas y Bienestar
               </span>
             </div>
           </a>

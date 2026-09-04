@@ -18,12 +18,17 @@ export const Footer: React.FC<FooterProps> = ({ config }) => {
           {/* Logo y lema */}
           <div className="md:col-span-5 space-y-4">
             <div className="flex items-center gap-3">
-              <div className="w-9 h-9 rounded-full bg-[#3d5a4c] text-white flex items-center justify-center">
+              <div className="w-9 h-9 rounded-full bg-[#3d5a4c] text-white flex items-center justify-center flex-shrink-0">
                 <Sparkles className="w-4 h-4 text-[#dfc89f]" />
               </div>
-              <span className="font-serif text-2xl font-semibold text-white tracking-wide">
-                {config.name}
-              </span>
+              <div>
+                <span className="font-serif text-2xl font-semibold text-white tracking-wide block leading-tight">
+                  {config.name}
+                </span>
+                <span className="text-[11px] text-[#dfc89f] tracking-wider uppercase font-medium block">
+                  Terapias Holísticas y Bienestar
+                </span>
+              </div>
             </div>
             <p className="text-xs sm:text-sm text-[#95a39a] leading-relaxed max-w-sm">
               Espacio dedicado a la reconexión profunda entre cuerpo, mente y alma. Quiromasaje terapéutico, Reiki Usui, Registros Akáshicos y respiración consciente.

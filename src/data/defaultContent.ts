@@ -2,8 +2,8 @@ import { WebData } from "@/types/content";
 
 export const defaultWebData: WebData = {
   config: {
-    name: "Aura Blanco y Negro",
-    tagline: "Terapias Holísticas & Bienestar Consciente",
+    name: "Blanco y Negro",
+    tagline: "Terapias Holísticas y Bienestar",
     description:
       "Un santuario de calma y equilibrio en el que reconectar con tu esencia natural a través del quiromasaje, la energía Reiki, las lecturas de Registros Akáshicos y la respiración consciente.",
     therapistName: "Pepi",
@@ -12,7 +12,7 @@ export const defaultWebData: WebData = {
     phone: "+34600123456",
     phoneDisplay: "600 123 456",
     whatsapp: "34600123456",
-    email: "contacto@aurablancoynegro.com",
+    email: "contacto@blancoynegroterapias.com",
     address: "Carrer de la Pau, 18, Principal 2ª",
     city: "Valencia / Zona Centro",
     schedule: "Lunes a Viernes: 09:30 - 20:00 | Sábados con cita previa",
@@ -245,7 +245,7 @@ export const defaultWebData: WebData = {
       author: "David Serrano",
       service: "Reiki Usui & Chakras",
       rating: 5,
-      text: "Era muy escéptico con el tema energético hasta que probé una sesión de Reiki en Aura Blanco y Negro. La sensación de calor en el pecho, la calma mental que experimenté y cómo descansé esa misma noche me dejaron impresionado. Totalmente recomendable para desconectar del estrés.",
+      text: "Era muy escéptico con el tema energético hasta que probé una sesión de Reiki en Blanco y Negro - Terapias Holísticas y Bienestar. La sensación de calor en el pecho, la calma mental que experimenté y cómo descansé esa misma noche me dejaron impresionado. Totalmente recomendable para desconectar del estrés.",
       date: "Hace 3 semanas",
       verified: true,
     },

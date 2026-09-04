@@ -100,7 +100,7 @@ export const Hero: React.FC<HeroProps> = ({ config, onOpenBooking }) => {
               <div className="relative rounded-3xl overflow-hidden shadow-2xl border-4 border-white aspect-[4/5] bg-[#ece4d8]">
                 <Image
                   src="https://images.unsplash.com/photo-1544161515-4ab6ce6db874?auto=format&fit=crop&w=1200&q=80"
-                  alt="Sesión de masaje terapéutico y bienestar en Aura Blanco y Negro"
+                  alt="Sesión de masaje terapéutico y bienestar en Blanco y Negro - Terapias Holísticas y Bienestar"
                   fill
                   sizes="(max-width: 1024px) 100vw, 50vw"
                   className="object-cover"

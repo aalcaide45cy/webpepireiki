@@ -1,4 +1,4 @@
-# Aura Blanco y Negro · Terapias Holísticas & Bienestar
+# Blanco y Negro - Terapias Holísticas y Bienestar
 
 Sitio web profesional, ultra-rápido y elegante para un centro de terapias holísticas especializado en:
 - **Quiromasaje & Masaje Terapéutico** (descontracturante, relajante, descarga muscular)
@@ -18,7 +18,7 @@ Sitio web profesional, ultra-rápido y elegante para un centro de terapias holí
 - **Rendimiento Máximo**: Renderizado estático incremental (ISR) alojado en el Edge CDN de Vercel (carga < 1s).
 - **Gestión de Contenidos mediante Google Sheets**: El cliente puede modificar textos, precios, talleres y reseñas directamente en un Google Sheet sin necesidad de tocar código.
 - **Optimización de Fotos de Google Drive**: Las fotos subidas a Google Drive son transformadas automáticamente a formatos de última generación (**WebP / AVIF**) y cacheadas en la CDN, sin penalizar la velocidad de la web.
-- **Botón de Publicación con 1 Clic**: Mediante un Google Apps Script integrado en el Google Sheet, el cliente pulsa `[🌟 Web Aura] -> [🚀 Publicar Cambios en la Web]` para desplegar sus actualizaciones en Vercel en ~30 segundos.
+- **Botón de Publicación con 1 Clic**: Mediante un Google Apps Script integrado en el Google Sheet, el cliente pulsa `[🌟 Web Blanco y Negro] -> [🚀 Publicar Cambios en la Web]` para desplegar sus actualizaciones en Vercel en ~30 segundos.
 
 ---
 
