@@ -2,7 +2,8 @@
 
 import React from "react";
 import { SiteConfig } from "@/types/content";
-import { Sparkles, Heart } from "lucide-react";
+import { Heart } from "lucide-react";
+import Image from "next/image";
 
 interface FooterProps {
   config: SiteConfig;
@@ -18,8 +19,14 @@ export const Footer: React.FC<FooterProps> = ({ config }) => {
           {/* Logo y lema */}
           <div className="md:col-span-5 space-y-4">
             <div className="flex items-center gap-3">
-              <div className="w-9 h-9 rounded-full bg-[#3d5a4c] text-white flex items-center justify-center flex-shrink-0">
-                <Sparkles className="w-4 h-4 text-[#dfc89f]" />
+              <div className="w-10 h-10 rounded-full bg-[#f6f2ea] border border-[#dfc89f]/40 overflow-hidden flex items-center justify-center flex-shrink-0">
+                <Image
+                  src="/brand/yinyang.webp"
+                  alt="Logo Blanco y Negro"
+                  width={40}
+                  height={40}
+                  className="w-full h-full object-cover"
+                />
               </div>
               <div>
                 <span className="font-serif text-2xl font-semibold text-white tracking-wide block leading-tight">

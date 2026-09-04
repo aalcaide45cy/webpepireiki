@@ -2,7 +2,8 @@
 
 import React, { useState, useEffect } from "react";
 import { SiteConfig, Therapy } from "@/types/content";
-import { X, Calendar, MessageCircle, Clock, Check, Sparkles, Phone, AlertCircle } from "lucide-react";
+import { X, Calendar, MessageCircle, Clock, Check, Sparkles } from "lucide-react";
+import Image from "next/image";
 
 interface BookingModalProps {
   isOpen: boolean;
@@ -60,12 +61,18 @@ export const BookingModal: React.FC<BookingModalProps> = ({
       >
         {/* Cabecera del modal */}
         <div className="bg-[#3d5a4c] px-6 py-5 text-white flex items-center justify-between">
-          <div className="flex items-center gap-2.5">
-            <div className="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center text-[#dfc89f]">
-              <Calendar className="w-4 h-4" />
+          <div className="flex items-center gap-3">
+            <div className="w-10 h-10 rounded-full bg-[#f6f2ea] border border-[#dfc89f]/40 overflow-hidden flex items-center justify-center flex-shrink-0 shadow-xs">
+              <Image
+                src="/brand/yinyang.webp"
+                alt="Logo Blanco y Negro"
+                width={40}
+                height={40}
+                className="w-full h-full object-cover"
+              />
             </div>
             <div>
-              <h3 className="font-serif text-xl font-semibold">Solicitud de Cita</h3>
+              <h3 className="font-serif text-xl font-semibold leading-tight">Solicitud de Cita</h3>
               <p className="text-xs text-white/80">{config.name} · Atención personalizada</p>
             </div>
           </div>

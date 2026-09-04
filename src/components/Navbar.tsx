@@ -2,7 +2,8 @@
 
 import React, { useState, useEffect } from "react";
 import { SiteConfig } from "@/types/content";
-import { Sparkles, Calendar, Menu, X, Phone, MessageCircle } from "lucide-react";
+import { Calendar, Menu, X, Phone, MessageCircle } from "lucide-react";
+import Image from "next/image";
 
 interface NavbarProps {
   config: SiteConfig;
@@ -41,10 +42,17 @@ export const Navbar: React.FC<NavbarProps> = ({ config, onOpenBooking }) => {
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between">
-          {/* Logo */}
-          <a href="#" className="flex items-center gap-3 group">
-            <div className="w-10 h-10 rounded-full bg-[#3d5a4c] text-white flex items-center justify-center shadow-md transition-transform group-hover:scale-105">
-              <Sparkles className="w-5 h-5 text-[#dfc89f]" />
+          {/* Logo con el Yin-Yang oficial */}
+          <a href="#" className="flex items-center gap-3.5 group">
+            <div className="w-11 h-11 rounded-full bg-[#f6f2ea] border-2 border-[#3d5a4c]/20 overflow-hidden shadow-md flex items-center justify-center transition-transform group-hover:scale-105 flex-shrink-0">
+              <Image
+                src="/brand/yinyang.webp"
+                alt="Logo Blanco y Negro - Yin Yang"
+                width={44}
+                height={44}
+                className="w-full h-full object-cover"
+                priority
+              />
             </div>
             <div>
               <span className="font-serif text-xl sm:text-2xl font-semibold tracking-wide text-[#212924] block leading-tight">

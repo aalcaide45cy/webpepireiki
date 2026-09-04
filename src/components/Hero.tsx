@@ -13,18 +13,48 @@ interface HeroProps {
 export const Hero: React.FC<HeroProps> = ({ config, onOpenBooking }) => {
   return (
     <section className="relative pt-32 pb-20 md:pt-40 md:pb-28 overflow-hidden aura-gradient-subtle">
+      {/* Cañas de bambú laterales extraídas del logotipo oficial */}
+      <div className="hidden md:block absolute top-0 left-0 w-36 lg:w-48 h-full pointer-events-none opacity-20 lg:opacity-25 mix-blend-multiply -z-0 overflow-hidden select-none">
+        <Image
+          src="/brand/bamboo-left.webp"
+          alt="Bambú natural zen"
+          fill
+          className="object-contain object-left-top"
+        />
+      </div>
+      <div className="hidden md:block absolute top-0 right-0 w-36 lg:w-48 h-full pointer-events-none opacity-20 lg:opacity-25 mix-blend-multiply -z-0 overflow-hidden select-none">
+        <Image
+          src="/brand/bamboo-right.webp"
+          alt="Bambú natural zen"
+          fill
+          className="object-contain object-right-top"
+        />
+      </div>
+
+      {/* Símbolo Yin-Yang zen en respiración sutil de fondo */}
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[420px] h-[420px] md:w-[580px] md:h-[580px] opacity-[0.035] pointer-events-none -z-10 select-none animate-zen-breathe">
+        <Image
+          src="/brand/yinyang.webp"
+          alt="Yin Yang de fondo"
+          fill
+          className="object-contain"
+        />
+      </div>
+
       {/* Círculos decorativos de energía / aura */}
       <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[550px] h-[550px] md:w-[750px] md:h-[750px] bg-gradient-to-tr from-[#cbdbd0]/35 via-[#e2ede6]/40 to-[#dfc89f]/25 rounded-full blur-3xl pointer-events-none -z-10 animate-zen-breathe" />
       <div className="absolute top-10 right-10 w-72 h-72 bg-[#dfc89f]/20 rounded-full blur-2xl pointer-events-none -z-10" />
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
           
           {/* Columna Izquierda: Texto principal y llamadas a la acción */}
           <div className="lg:col-span-7 text-center lg:text-left">
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#e8efe9] border border-[#cbdbd0] text-[#2f4d3e] text-xs sm:text-sm font-medium mb-6">
-              <Sparkles className="w-4 h-4 text-[#b5935b]" />
-              <span>Espacio Terapéutico Holístico · Valencia</span>
+            <div className="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full bg-[#e8efe9] border border-[#cbdbd0] text-[#2f4d3e] text-xs sm:text-sm font-medium mb-6">
+              <div className="w-5 h-5 rounded-full overflow-hidden border border-[#3d5a4c]/30 flex-shrink-0 bg-white">
+                <Image src="/brand/yinyang.webp" alt="Yin Yang" width={20} height={20} className="w-full h-full object-cover" />
+              </div>
+              <span>Armonía Yin-Yang & Bienestar Holístico · Valencia</span>
             </div>
 
             <h1 className="font-serif text-4xl sm:text-5xl md:text-6xl font-normal text-[#1e2621] tracking-tight leading-[1.15] mb-6">
@@ -126,6 +156,30 @@ export const Hero: React.FC<HeroProps> = ({ config, onOpenBooking }) => {
                   {"★".repeat(5)}
                 </div>
                 <span className="text-xs font-semibold text-[#212924]">5.0 en Reseñas</span>
+              </div>
+
+              {/* Tarjeta flotante 3: Sello Yin-Yang & Bambú */}
+              <div
+                className="hidden sm:flex absolute -bottom-6 -right-4 sm:-right-8 bg-white/95 backdrop-blur-md p-3.5 sm:p-4 rounded-2xl shadow-xl border border-[#ece4d8] items-center gap-3 animate-float-gentle"
+                style={{ animationDelay: "-2.5s" }}
+              >
+                <div className="w-11 h-11 rounded-full overflow-hidden border border-[#3d5a4c]/30 flex-shrink-0 bg-[#f6f2ea] shadow-xs">
+                  <Image
+                    src="/brand/yinyang.webp"
+                    alt="Yin Yang Blanco y Negro"
+                    width={44}
+                    height={44}
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+                <div>
+                  <span className="text-[10px] uppercase tracking-wider text-[#3d5a4c] font-bold block leading-none mb-0.5">
+                    Dualidad & Armonía
+                  </span>
+                  <span className="text-xs font-semibold text-[#212924] block">
+                    Yin-Yang & Bambú
+                  </span>
+                </div>
               </div>
             </div>
           </div>
