@@ -52,11 +52,11 @@ export const CartDrawer: React.FC<CartDrawerProps> = ({
   const [clientName, setClientName] = useState("");
   const [clientEmail, setClientEmail] = useState("");
   const [clientPhone, setClientPhone] = useState("");
-  const [deliveryType, setDeliveryType] = useState<"cabina" | "envio">("cabina");
+  const [deliveryType, setDeliveryType] = useState<"tienda" | "envio">("tienda");
   const [clientAddress, setClientAddress] = useState("");
   const [clientCity, setClientCity] = useState("");
   const [clientPostalCode, setClientPostalCode] = useState("");
-  const [paymentMethod, setPaymentMethod] = useState<"bizum" | "cabina">("bizum");
+  const [paymentMethod, setPaymentMethod] = useState<"bizum" | "tienda">("bizum");
   const [notes, setNotes] = useState("");
 
   // Estado de envío
@@ -315,7 +315,7 @@ export const CartDrawer: React.FC<CartDrawerProps> = ({
                     </div>
                     <div className="flex items-center justify-between text-xs text-[#6e7d73]">
                       <span>Entrega</span>
-                      <span className="text-[#3d5a4c] font-semibold">Gratis en cabina / A consultar</span>
+                      <span className="text-[#3d5a4c] font-semibold">Gratis en tienda (Boiro) / A consultar</span>
                     </div>
                     <div className="flex items-center justify-between text-sm font-bold text-[#212924] pt-1.5 border-t border-[#e8ded0]">
                       <span>Total</span>
@@ -421,16 +421,16 @@ export const CartDrawer: React.FC<CartDrawerProps> = ({
                   <div className="grid grid-cols-2 gap-2">
                     <button
                       type="button"
-                      onClick={() => setDeliveryType("cabina")}
+                      onClick={() => setDeliveryType("tienda")}
                       className={`p-3 rounded-2xl border text-left transition-all cursor-pointer ${
-                        deliveryType === "cabina"
+                        deliveryType === "tienda"
                           ? "bg-[#eaf0ec] border-[#3d5a4c] ring-1 ring-[#3d5a4c]"
                           : "bg-white border-[#e0d8cc] hover:bg-[#faf7f2]"
                       }`}
                     >
                       <Store className="w-4 h-4 text-[#3d5a4c] mb-1.5" />
-                      <span className="block text-xs font-semibold text-[#212924]">Recogida en Cabina</span>
-                      <span className="text-[10px] text-[#3d5a4c] font-medium">Gratis · Valencia Centro</span>
+                      <span className="block text-xs font-semibold text-[#212924]">Recogida en Tienda</span>
+                      <span className="text-[10px] text-[#3d5a4c] font-medium">Gratis · Boiro</span>
                     </button>
 
                     <button
@@ -508,10 +508,10 @@ export const CartDrawer: React.FC<CartDrawerProps> = ({
                       </div>
                     </label>
 
-                    {deliveryType === "cabina" && (
+                    {deliveryType === "tienda" && (
                       <label
                         className={`flex items-start gap-3 p-3 rounded-2xl border cursor-pointer transition-all ${
-                          paymentMethod === "cabina"
+                          paymentMethod === "tienda"
                             ? "bg-[#f5fbf7] border-[#3d5a4c] ring-1 ring-[#3d5a4c]"
                             : "bg-white border-[#e0d8cc]"
                         }`}
@@ -519,14 +519,14 @@ export const CartDrawer: React.FC<CartDrawerProps> = ({
                         <input
                           type="radio"
                           name="paymentMethod"
-                          checked={paymentMethod === "cabina"}
-                          onChange={() => setPaymentMethod("cabina")}
+                          checked={paymentMethod === "tienda"}
+                          onChange={() => setPaymentMethod("tienda")}
                           className="mt-0.5 text-[#3d5a4c] focus:ring-[#3d5a4c]"
                         />
                         <div className="flex-1 text-xs">
                           <span className="font-semibold text-[#212924] block">En Efectivo / Tarjeta al Recoger</span>
                           <span className="text-[11px] text-[#6e7d73]">
-                            Paga en persona en la cabina al retirar tu paquete.
+                            Paga en persona en la tienda en Boiro al retirar tu paquete.
                           </span>
                         </div>
                       </label>
@@ -698,10 +698,10 @@ export const CartDrawer: React.FC<CartDrawerProps> = ({
                 ) : (
                   <div className="p-4 rounded-2xl bg-[#fbf9f5] border border-[#cbdbd0] space-y-2">
                     <h5 className="text-xs font-bold uppercase tracking-wider text-[#3d5a4c]">
-                      Recogida en Cabina
+                      Recogida en Tienda
                     </h5>
                     <p className="text-xs text-[#55645a] leading-relaxed">
-                      Tu pedido te estará esperando en <strong>Carrer de la Pau, 18 (Valencia)</strong>. Podrás abonarlo cómodamente en efectivo o con tarjeta en mano.
+                      Tu pedido te estará esperando en nuestra tienda en <strong>Boiro</strong>. Podrás abonarlo cómodamente en efectivo o con tarjeta en el momento de la recogida.
                     </p>
                   </div>
                 )}

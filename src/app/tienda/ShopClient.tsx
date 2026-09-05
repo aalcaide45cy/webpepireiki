@@ -153,7 +153,7 @@ export const ShopClient: React.FC<ShopClientProps> = ({ config, products, therap
                   </span>
                 </div>
                 <p className="text-xs sm:text-sm text-[#46594d] leading-relaxed">
-                  Tramita tu compra en 1 minuto directamente en esta web. Sin registros forzosos, sin contraseñas y sin salir a aplicaciones externas. Al confirmar, recibirás tu código de comanda oficial e instrucciones para Bizum o pago al recoger en cabina.
+                  Tramita tu compra en 1 minuto directamente en esta web. Sin registros forzosos, sin contraseñas y sin salir a aplicaciones externas. Al confirmar, recibirás tu código de comanda oficial e instrucciones para Bizum o pago al recoger en tienda en Boiro.
                 </p>
               </div>
               <button
@@ -395,7 +395,7 @@ export const ShopClient: React.FC<ShopClientProps> = ({ config, products, therap
                   Entrega y Contacto
                 </h4>
                 <p className="text-xs text-[#55645a] leading-relaxed">
-                  Elige <strong>recogida gratis en cabina</strong> o <strong>envío a domicilio</strong>, e indícanos tus datos para enviarte el comprobante.
+                  Elige <strong>recogida gratis en tienda (Boiro)</strong> o <strong>envío a domicilio</strong>, e indícanos tus datos para enviarte el comprobante.
                 </p>
               </div>
 
@@ -419,7 +419,7 @@ export const ShopClient: React.FC<ShopClientProps> = ({ config, products, therap
                   Bizum o en Mano
                 </h4>
                 <p className="text-xs text-[#55645a] leading-relaxed">
-                  Realiza tu Bizum con tu número de pedido como concepto o abónalo en efectivo/tarjeta al retirar tu paquete en cabina.
+                  Realiza tu Bizum con tu número de pedido como concepto o abónalo en efectivo/tarjeta al retirar tu paquete en la tienda en Boiro.
                 </p>
               </div>
             </div>
@@ -435,10 +435,10 @@ export const ShopClient: React.FC<ShopClientProps> = ({ config, products, therap
                 <span>Experiencia Integral</span>
               </div>
               <h3 className="font-serif text-2xl sm:text-3xl font-semibold leading-snug">
-                ¿Prefieres que te asesore personalmente en cabina?
+                ¿Prefieres visitarnos y recibir asesoramiento en tienda?
               </h3>
               <p className="text-xs sm:text-sm text-white/80 leading-relaxed">
-                Reserva una sesión de quiromasaje descontracturante o armonización Reiki. Podrás probar los aceites y elegir tus cristales directamente durante tu visita.
+                Reserva una sesión de quiromasaje descontracturante o armonización Reiki en nuestro espacio en Boiro. Podrás probar los aceites y elegir tus cristales directamente durante tu visita.
               </p>
             </div>
 
@@ -448,7 +448,7 @@ export const ShopClient: React.FC<ShopClientProps> = ({ config, products, therap
                 className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-full bg-white text-[#2d473b] font-semibold text-sm shadow hover:bg-[#f6f2ea] transition-all cursor-pointer"
               >
                 <Calendar className="w-4 h-4 text-[#3d5a4c]" />
-                <span>Pedir Cita en Cabina</span>
+                <span>Pedir Cita Presencial</span>
               </button>
               <Link
                 href="/#terapias"

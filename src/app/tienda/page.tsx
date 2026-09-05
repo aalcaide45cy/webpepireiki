@@ -8,7 +8,7 @@ export const revalidate = 3600;
 export const metadata: Metadata = {
   title: "Tienda Holística & Autocuidado | Blanco y Negro - Terapias",
   description:
-    "Selección botánica, aromaterapia pura, minerales y herramientas de bienestar para prolongar tu armonía en casa. Pedidos directos en la web, Bizum y recogida en cabina.",
+    "Selección botánica, aromaterapia pura, minerales y herramientas de bienestar para prolongar tu armonía en casa. Pedidos directos en la web, Bizum y recogida en tienda en Boiro.",
   openGraph: {
     title: "Tienda Holística & Autocuidado | Blanco y Negro",
     description: "Aceites esenciales puros, minerales para chakras y herramientas de masaje consciente.",

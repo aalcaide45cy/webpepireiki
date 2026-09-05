@@ -141,7 +141,7 @@ export const HarmonizationSection: React.FC<HarmonizationSectionProps> = ({ item
                 {/* Consultar asesoramiento */}
                 <div className="pt-5 border-t border-[#f0ebe1] mt-5 flex items-center justify-between">
                   <span className="text-xs text-[#6e7d73]">
-                    Asesoramiento personalizado en cabina.
+                    Asesoramiento personalizado en tienda y terapias.
                   </span>
                   <a
                     href={`https://wa.me/${config.whatsapp}?text=Hola%20${encodeURIComponent(

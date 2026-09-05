@@ -23,7 +23,7 @@ export const LocationSection: React.FC<LocationSectionProps> = ({ config }) => {
     },
     {
       q: "¿Se pueden realizar las lecturas de Registros Akáshicos a distancia?",
-      a: "Sí, absolutamente. La energía del Akasha trasciende el espacio y el tiempo. Ofrecemos lecturas tanto presenciales en nuestra cabina como en directo mediante videollamada por Zoom o WhatsApp, con la misma exactitud y profundidad.",
+      a: "Sí, absolutamente. La energía del Akasha trasciende el espacio y el tiempo. Ofrecemos lecturas tanto presenciales en nuestro espacio en Boiro como en directo mediante videollamada por Zoom o WhatsApp, con la misma exactitud y profundidad.",
     },
     {
       q: "¿Las terapias holísticas sustituyen un tratamiento médico?",

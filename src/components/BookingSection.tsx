@@ -90,7 +90,7 @@ export const BookingSection: React.FC<BookingSectionProps> = ({ config, onOpenBo
 
               <div className="border-b border-white/15 pb-5">
                 <span className="text-xs uppercase tracking-wider text-[#dfc89f] font-semibold block mb-1">
-                  Ubicación de Cabina
+                  Ubicación del Espacio y Tienda
                 </span>
                 <p className="text-base font-medium">{config.address}</p>
                 <p className="text-xs text-white/80 mt-0.5">{config.city}</p>

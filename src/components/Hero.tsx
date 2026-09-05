@@ -54,7 +54,7 @@ export const Hero: React.FC<HeroProps> = ({ config, onOpenBooking }) => {
               <div className="w-5 h-5 rounded-full overflow-hidden border border-[#3d5a4c]/30 flex-shrink-0 bg-white">
                 <Image src="/brand/yinyang.webp" alt="Yin Yang" width={20} height={20} className="w-full h-full object-cover" />
               </div>
-              <span>Armonía Yin-Yang & Bienestar Holístico · Valencia</span>
+              <span>Armonía Yin-Yang & Bienestar Holístico · Boiro</span>
             </div>
 
             <h1 className="font-serif text-4xl sm:text-5xl md:text-6xl font-normal text-[#1e2621] tracking-tight leading-[1.15] mb-6">
