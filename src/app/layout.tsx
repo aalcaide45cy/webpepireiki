@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { Playfair_Display, Plus_Jakarta_Sans } from "next/font/google";
 import "./globals.css";
+import { CartProvider } from "@/context/CartContext";
+import { CartDrawer } from "@/components/CartDrawer";
 
 const playfair = Playfair_Display({
   variable: "--font-serif",
@@ -51,7 +53,10 @@ export default function RootLayout({
   return (
     <html lang="es" className={`${plusJakarta.variable} ${playfair.variable} h-full antialiased`}>
       <body className="min-h-full flex flex-col font-sans bg-[#fbf9f5] text-[#212924] selection:bg-[#4a6b5d]/20 selection:text-[#2d473b]">
-        {children}
+        <CartProvider>
+          {children}
+          <CartDrawer />
+        </CartProvider>
       </body>
     </html>
   );

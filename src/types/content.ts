@@ -76,6 +76,26 @@ export interface ChakraItem {
   symptoms: string;
 }
 
+export interface ShopProduct {
+  id: string;
+  name: string;
+  category: "aromaterapia" | "minerales" | "herramientas" | "armonizacion";
+  categoryLabel: string;
+  shortDescription: string;
+  fullDescription: string;
+  price: number;
+  originalPrice?: number;
+  badge?: string;
+  benefits: string[];
+  imageUrl: string;
+  inStock: boolean;
+}
+
+export interface CartItem {
+  product: ShopProduct;
+  quantity: number;
+}
+
 export interface WebData {
   config: SiteConfig;
   therapies: Therapy[];
@@ -83,4 +103,5 @@ export interface WebData {
   harmonization: HarmonizationItem[];
   reviews: Review[];
   chakras: ChakraItem[];
+  products?: ShopProduct[];
 }

@@ -2,17 +2,22 @@
 
 import React, { useState, useEffect } from "react";
 import { SiteConfig } from "@/types/content";
-import { Calendar, Menu, X, Phone, MessageCircle } from "lucide-react";
+import { Calendar, Menu, X, Phone, MessageCircle, ShoppingBag } from "lucide-react";
 import Image from "next/image";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
+import { useCart } from "@/context/CartContext";
 
 interface NavbarProps {
   config: SiteConfig;
-  onOpenBooking: (preselectedService?: string) => void;
+  onOpenBooking?: (preselectedService?: string) => void;
 }
 
 export const Navbar: React.FC<NavbarProps> = ({ config, onOpenBooking }) => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const pathname = usePathname();
+  const { totalItems, setIsCartOpen } = useCart();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -28,22 +33,31 @@ export const Navbar: React.FC<NavbarProps> = ({ config, onOpenBooking }) => {
     { name: "Chakras", href: "#chakras" },
     { name: "Talleres", href: "#talleres" },
     { name: "Armonización", href: "#armonizacion" },
+    { name: "Tienda", href: "/tienda", isBadge: true },
     { name: "Reseñas", href: "#resenas" },
     { name: "Contacto", href: "#contacto" },
   ];
+
+  // Resuelve si el link debe ir a la home con hash si estamos en /tienda
+  const resolveHref = (href: string) => {
+    if (href.startsWith("#")) {
+      return pathname === "/" ? href : `/${href}`;
+    }
+    return href;
+  };
 
   return (
     <header
       className={`fixed top-0 left-0 right-0 z-40 transition-all duration-300 ${
         isScrolled
-          ? "bg-[#fbf9f5]/90 backdrop-blur-md shadow-sm py-3 border-b border-[#ece4d8]/80"
+          ? "bg-[#fbf9f5]/92 backdrop-blur-md shadow-sm py-3 border-b border-[#ece4d8]/80"
           : "bg-transparent py-5"
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between">
           {/* Logo con el Yin-Yang oficial */}
-          <a href="#" className="flex items-center gap-3.5 group">
+          <Link href="/" className="flex items-center gap-3.5 group">
             <div className="w-11 h-11 rounded-full bg-[#f6f2ea] border-2 border-[#3d5a4c]/20 overflow-hidden shadow-md flex items-center justify-center transition-transform group-hover:scale-105 flex-shrink-0">
               <Image
                 src="/brand/yinyang.webp"
@@ -62,23 +76,53 @@ export const Navbar: React.FC<NavbarProps> = ({ config, onOpenBooking }) => {
                 Terapias Holísticas y Bienestar
               </span>
             </div>
-          </a>
+          </Link>
 
           {/* Desktop Nav */}
-          <nav className="hidden lg:flex items-center gap-7">
-            {navLinks.map((link) => (
-              <a
-                key={link.name}
-                href={link.href}
-                className="text-sm font-medium text-[#414d45] hover:text-[#2d473b] transition-colors relative py-1 after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-[#3d5a4c] hover:after:w-full after:transition-all"
-              >
-                {link.name}
-              </a>
-            ))}
+          <nav className="hidden lg:flex items-center gap-6 xl:gap-7">
+            {navLinks.map((link) => {
+              const href = resolveHref(link.href);
+              const isTiendaActive = link.href === "/tienda" && pathname === "/tienda";
+
+              return (
+                <Link
+                  key={link.name}
+                  href={href}
+                  className={`text-sm font-medium transition-all relative py-1 flex items-center gap-1.5 ${
+                    isTiendaActive
+                      ? "text-[#2d473b] font-bold border-b-2 border-[#3d5a4c]"
+                      : "text-[#414d45] hover:text-[#2d473b] after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-[#3d5a4c] hover:after:w-full after:transition-all"
+                  }`}
+                >
+                  <span>{link.name}</span>
+                  {link.isBadge && (
+                    <span className="text-[10px] font-bold px-1.5 py-0.5 rounded-full bg-[#dfc89f]/40 text-[#2d473b] border border-[#dfc89f]">
+                      Demo
+                    </span>
+                  )}
+                </Link>
+              );
+            })}
           </nav>
 
           {/* Action CTAs */}
-          <div className="hidden sm:flex items-center gap-3">
+          <div className="hidden sm:flex items-center gap-2.5">
+            {/* Botón Carrito */}
+            <button
+              onClick={() => setIsCartOpen(true)}
+              className="relative p-2.5 rounded-full text-[#3d5a4c] hover:bg-[#eaf0ec] transition-colors cursor-pointer group"
+              title="Ver Cesta de la Tienda"
+              aria-label="Ver Cesta"
+            >
+              <ShoppingBag className="w-5 h-5 transition-transform group-hover:scale-110" />
+              {totalItems > 0 && (
+                <span className="absolute -top-1 -right-1 min-w-[20px] h-5 px-1 rounded-full bg-[#3d5a4c] text-[#dfc89f] text-[11px] font-bold flex items-center justify-center shadow-md">
+                  {totalItems}
+                </span>
+              )}
+            </button>
+
+            {/* WhatsApp */}
             <a
               href={`https://wa.me/${config.whatsapp}?text=Hola%20${encodeURIComponent(
                 config.name
@@ -91,24 +135,60 @@ export const Navbar: React.FC<NavbarProps> = ({ config, onOpenBooking }) => {
               <MessageCircle className="w-5 h-5 text-[#25D366]" />
             </a>
 
-            <button
-              onClick={() => onOpenBooking()}
-              className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-[#3d5a4c] text-white font-medium text-sm shadow-sm hover:bg-[#2d473b] hover:shadow transition-all duration-200 cursor-pointer"
-            >
-              <Calendar className="w-4 h-4 text-[#dfc89f]" />
-              <span>Pedir Cita</span>
-            </button>
+            {/* Pedir Cita */}
+            {onOpenBooking ? (
+              <button
+                onClick={() => onOpenBooking()}
+                className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-[#3d5a4c] text-white font-medium text-sm shadow-sm hover:bg-[#2d473b] hover:shadow transition-all duration-200 cursor-pointer"
+              >
+                <Calendar className="w-4 h-4 text-[#dfc89f]" />
+                <span>Pedir Cita</span>
+              </button>
+            ) : (
+              <Link
+                href="/#contacto"
+                className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-[#3d5a4c] text-white font-medium text-sm shadow-sm hover:bg-[#2d473b] hover:shadow transition-all duration-200"
+              >
+                <Calendar className="w-4 h-4 text-[#dfc89f]" />
+                <span>Pedir Cita</span>
+              </Link>
+            )}
           </div>
 
-          {/* Mobile hamburger */}
+          {/* Mobile hamburger & cart */}
           <div className="flex sm:hidden items-center gap-2">
             <button
-              onClick={() => onOpenBooking()}
-              className="p-2 rounded-full bg-[#3d5a4c] text-white"
-              title="Pedir Cita"
+              onClick={() => setIsCartOpen(true)}
+              className="relative p-2 rounded-full bg-[#eaf0ec] text-[#3d5a4c]"
+              title="Ver Cesta"
+              aria-label="Ver Cesta"
             >
-              <Calendar className="w-4 h-4 text-[#dfc89f]" />
+              <ShoppingBag className="w-4 h-4" />
+              {totalItems > 0 && (
+                <span className="absolute -top-1 -right-1 w-4 h-4 rounded-full bg-[#3d5a4c] text-white text-[9px] font-bold flex items-center justify-center">
+                  {totalItems}
+                </span>
+              )}
             </button>
+
+            {onOpenBooking ? (
+              <button
+                onClick={() => onOpenBooking()}
+                className="p-2 rounded-full bg-[#3d5a4c] text-white"
+                title="Pedir Cita"
+              >
+                <Calendar className="w-4 h-4 text-[#dfc89f]" />
+              </button>
+            ) : (
+              <Link
+                href="/#contacto"
+                className="p-2 rounded-full bg-[#3d5a4c] text-white"
+                title="Pedir Cita"
+              >
+                <Calendar className="w-4 h-4 text-[#dfc89f]" />
+              </Link>
+            )}
+
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
               className="p-2 text-[#212924] rounded-lg hover:bg-[#f0ebe1]"
@@ -123,30 +203,52 @@ export const Navbar: React.FC<NavbarProps> = ({ config, onOpenBooking }) => {
         {mobileMenuOpen && (
           <div className="lg:hidden mt-3 pt-3 pb-4 border-t border-[#ece4d8] bg-[#fbf9f5] rounded-2xl p-4 shadow-lg">
             <nav className="flex flex-col gap-2">
-              {navLinks.map((link) => (
-                <a
-                  key={link.name}
-                  href={link.href}
-                  onClick={() => setMobileMenuOpen(false)}
-                  className="px-3 py-2 text-base font-medium text-[#2d473b] hover:bg-[#f0ebe1] rounded-lg"
-                >
-                  {link.name}
-                </a>
-              ))}
+              {navLinks.map((link) => {
+                const href = resolveHref(link.href);
+                return (
+                  <Link
+                    key={link.name}
+                    href={href}
+                    onClick={() => setMobileMenuOpen(false)}
+                    className="px-3 py-2 text-base font-medium text-[#2d473b] hover:bg-[#f0ebe1] rounded-lg flex items-center justify-between"
+                  >
+                    <span>{link.name}</span>
+                    {link.isBadge && (
+                      <span className="text-xs font-bold px-2 py-0.5 rounded-full bg-[#dfc89f]/40 text-[#2d473b] border border-[#dfc89f]">
+                        Demo
+                      </span>
+                    )}
+                  </Link>
+                );
+              })}
               <div className="pt-3 border-t border-[#ece4d8] flex flex-col gap-2">
                 <button
                   onClick={() => {
                     setMobileMenuOpen(false);
-                    onOpenBooking();
+                    setIsCartOpen(true);
                   }}
-                  className="w-full py-2.5 rounded-xl bg-[#3d5a4c] text-white font-medium text-sm flex items-center justify-center gap-2"
+                  className="w-full py-2.5 rounded-xl bg-[#eaf0ec] text-[#2d473b] font-medium text-sm flex items-center justify-center gap-2"
                 >
-                  <Calendar className="w-4 h-4 text-[#dfc89f]" />
-                  <span>Pedir Cita</span>
+                  <ShoppingBag className="w-4 h-4 text-[#3d5a4c]" />
+                  <span>Ver Cesta ({totalItems} {totalItems === 1 ? "artículo" : "artículos"})</span>
                 </button>
+
+                {onOpenBooking && (
+                  <button
+                    onClick={() => {
+                      setMobileMenuOpen(false);
+                      onOpenBooking();
+                    }}
+                    className="w-full py-2.5 rounded-xl bg-[#3d5a4c] text-white font-medium text-sm flex items-center justify-center gap-2"
+                  >
+                    <Calendar className="w-4 h-4 text-[#dfc89f]" />
+                    <span>Pedir Cita</span>
+                  </button>
+                )}
+
                 <a
                   href={`tel:${config.phone}`}
-                  className="w-full py-2.5 rounded-xl bg-[#eaf0ec] text-[#2d473b] font-medium text-sm flex items-center justify-center gap-2"
+                  className="w-full py-2.5 rounded-xl bg-[#f0ebe1] text-[#2d473b] font-medium text-sm flex items-center justify-center gap-2"
                 >
                   <Phone className="w-4 h-4" />
                   <span>Llamar: {config.phoneDisplay}</span>

@@ -1,4 +1,5 @@
 import { WebData } from "@/types/content";
+import { defaultShopProducts } from "@/data/shopProducts";
 
 export const defaultWebData: WebData = {
   config: {
@@ -358,4 +359,5 @@ export const defaultWebData: WebData = {
       symptoms: "Se bloquea con el apego material excesivo y el aislamiento espiritual.",
     },
   ],
+  products: defaultShopProducts,
 };

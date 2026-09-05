@@ -1,4 +1,4 @@
-import { WebData, Therapy, Workshop, HarmonizationItem, Review } from "@/types/content";
+import { WebData, Therapy, Workshop, HarmonizationItem, Review, ShopProduct } from "@/types/content";
 import { defaultWebData } from "@/data/defaultContent";
 import { formatImageUrl } from "@/lib/drive";
 
@@ -74,11 +74,12 @@ export async function getWebData(): Promise<WebData> {
       return parseCsvRows(text);
     };
 
-    const [terapiasRows, talleresRows, armonizacionRows, resenasRows] = await Promise.allSettled([
+    const [terapiasRows, talleresRows, armonizacionRows, resenasRows, productosRows] = await Promise.allSettled([
       fetchSheetTab("Terapias"),
       fetchSheetTab("Talleres"),
       fetchSheetTab("Armonizacion"),
       fetchSheetTab("Reseñas"),
+      fetchSheetTab("Productos"),
     ]);
 
     const updatedData: WebData = {
@@ -170,6 +171,33 @@ export async function getWebData(): Promise<WebData> {
       }));
       if (customReviews.length > 0) {
         updatedData.reviews = customReviews;
+      }
+    }
+
+    // 5. Productos
+    if (productosRows.status === "fulfilled" && productosRows.value.length > 0) {
+      const customProducts: ShopProduct[] = productosRows.value.map((row, idx) => {
+        const rawImg = row["imagen"] || row["foto"] || "";
+        const priceNum = parseFloat(row["precio"]?.replace(",", ".") || "0") || 15.0;
+        const origPriceNum = row["precioanterior"] ? parseFloat(row["precioanterior"]?.replace(",", ".")) : undefined;
+
+        return {
+          id: row["id"] || `producto-${idx + 1}`,
+          name: row["nombre"] || row["titulo"] || "Producto Holístico",
+          category: (row["categoria"] as ShopProduct["category"]) || "aromaterapia",
+          categoryLabel: row["etiqueta"] || "Holístico",
+          shortDescription: row["descripcioncorta"] || "",
+          fullDescription: row["descripcioncompleta"] || row["descripcion"] || "",
+          price: priceNum,
+          originalPrice: origPriceNum,
+          badge: row["destacado"] || undefined,
+          benefits: (row["beneficios"] || "").split(";").map((b) => b.trim()).filter(Boolean),
+          imageUrl: formatImageUrl(rawImg, "https://images.unsplash.com/photo-1608571423902-eed4a5ad8108?auto=format&fit=crop&w=800&q=80"),
+          inStock: row["stock"]?.toLowerCase() !== "no" && row["disponible"]?.toLowerCase() !== "no",
+        };
+      });
+      if (customProducts.length > 0) {
+        updatedData.products = customProducts;
       }
     }
 
