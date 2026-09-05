@@ -137,23 +137,23 @@ export const ShopClient: React.FC<ShopClientProps> = ({ config, products, therap
             </p>
           </div>
 
-          {/* Banner Demostración - Modelo WhatsApp Commerce (Opción A) */}
+          {/* Banner Demostración - Pedido Directo Online (Opción 2) */}
           <div className="mt-8 p-5 sm:p-6 rounded-3xl bg-gradient-to-r from-[#edf4f0] via-[#f5f0e6] to-[#edf4f0] border border-[#d2dfd7] shadow-sm max-w-4xl mx-auto">
             <div className="flex flex-col md:flex-row items-start md:items-center gap-4">
               <div className="w-12 h-12 rounded-2xl bg-[#3d5a4c] text-[#dfc89f] flex items-center justify-center flex-shrink-0 shadow-md">
-                <Zap className="w-6 h-6" />
+                <ShieldCheck className="w-6 h-6" />
               </div>
               <div className="flex-1 space-y-1">
                 <div className="flex items-center gap-2 flex-wrap">
                   <h3 className="font-serif text-base sm:text-lg font-semibold text-[#212924]">
-                    Demostración de Tienda sin Base de Datos (Opción A)
+                    Tienda Online con Pedido Directo (Opción 2)
                   </h3>
                   <span className="text-[10px] uppercase font-bold tracking-wider px-2 py-0.5 rounded-full bg-[#3d5a4c] text-white">
-                    0€ Mantenimiento
+                    Sin Comisiones · Sin Pasarelas
                   </span>
                 </div>
                 <p className="text-xs sm:text-sm text-[#46594d] leading-relaxed">
-                  Esta tienda almacena tu cesta en tu navegador. Al pulsar <strong>&ldquo;Pedir por WhatsApp&rdquo;</strong>, se genera un mensaje detallado para enviar directamente a Pepi. Permite pago por <strong>Bizum</strong> o en efectivo al recoger en cabina. ¡Sin altas de servidor ni cuotas mensuales!
+                  Tramita tu compra en 1 minuto directamente en esta web. Sin registros forzosos, sin contraseñas y sin salir a aplicaciones externas. Al confirmar, recibirás tu código de comanda oficial e instrucciones para Bizum o pago al recoger en cabina.
                 </p>
               </div>
               <button
@@ -392,22 +392,22 @@ export const ShopClient: React.FC<ShopClientProps> = ({ config, products, therap
                   2
                 </div>
                 <h4 className="font-serif font-semibold text-sm text-[#212924]">
-                  Selecciona la entrega
+                  Entrega y Contacto
                 </h4>
                 <p className="text-xs text-[#55645a] leading-relaxed">
-                  Elige <strong>recogida gratis en cabina</strong> en el centro de Valencia o <strong>envío a domicilio</strong> si estás lejos.
+                  Elige <strong>recogida gratis en cabina</strong> o <strong>envío a domicilio</strong>, e indícanos tus datos para enviarte el comprobante.
                 </p>
               </div>
 
               <div className="p-5 rounded-2xl bg-[#fbf9f5] border border-[#ece4d8] space-y-3">
-                <div className="w-10 h-10 rounded-xl bg-[#25D366] text-white font-serif font-bold text-lg flex items-center justify-center shadow-xs">
+                <div className="w-10 h-10 rounded-xl bg-[#3d5a4c] text-[#dfc89f] font-serif font-bold text-lg flex items-center justify-center shadow-xs">
                   3
                 </div>
                 <h4 className="font-serif font-semibold text-sm text-[#212924]">
-                  Pide por WhatsApp
+                  Confirmación en Pantalla
                 </h4>
                 <p className="text-xs text-[#55645a] leading-relaxed">
-                  Con un solo clic se abrirá tu WhatsApp con el desglose exacto de tu pedido listo para enviárselo a Pepi.
+                  Tu comanda queda registrada al instante y recibes en pantalla tu número de pedido oficial (ej. #BYN-8421).
                 </p>
               </div>
 
@@ -419,7 +419,7 @@ export const ShopClient: React.FC<ShopClientProps> = ({ config, products, therap
                   Bizum o en Mano
                 </h4>
                 <p className="text-xs text-[#55645a] leading-relaxed">
-                  Pepi confirma el stock y te facilita el número para pagar por <strong>Bizum</strong> al instante o abonarlo al recoger.
+                  Realiza tu Bizum con tu número de pedido como concepto o abónalo en efectivo/tarjeta al retirar tu paquete en cabina.
                 </p>
               </div>
             </div>
