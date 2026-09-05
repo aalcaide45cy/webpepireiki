@@ -11,16 +11,8 @@ import {
   Sparkles,
   Search,
   CheckCircle2,
-  Filter,
-  ArrowRight,
-  ShieldCheck,
-  Zap,
-  HelpCircle,
-  Truck,
-  Store,
   Calendar,
   ChevronRight,
-  Heart,
 } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
@@ -137,32 +129,65 @@ export const ShopClient: React.FC<ShopClientProps> = ({ config, products, therap
             </p>
           </div>
 
-          {/* Banner Demostración - Pedido Directo Online (Opción 2) */}
-          <div className="mt-8 p-5 sm:p-6 rounded-3xl bg-gradient-to-r from-[#edf4f0] via-[#f5f0e6] to-[#edf4f0] border border-[#d2dfd7] shadow-sm max-w-4xl mx-auto">
-            <div className="flex flex-col md:flex-row items-start md:items-center gap-4">
-              <div className="w-12 h-12 rounded-2xl bg-[#3d5a4c] text-[#dfc89f] flex items-center justify-center flex-shrink-0 shadow-md">
-                <ShieldCheck className="w-6 h-6" />
-              </div>
-              <div className="flex-1 space-y-1">
-                <div className="flex items-center gap-2 flex-wrap">
-                  <h3 className="font-serif text-base sm:text-lg font-semibold text-[#212924]">
-                    Tienda Online con Pedido Directo (Opción 2)
-                  </h3>
-                  <span className="text-[10px] uppercase font-bold tracking-wider px-2 py-0.5 rounded-full bg-[#3d5a4c] text-white">
-                    Sin Comisiones · Sin Pasarelas
-                  </span>
+          {/* Guía en 4 pasos de cómo funciona el pedido */}
+          <div className="mt-10 bg-white rounded-3xl border border-[#ece4d8] p-6 sm:p-8 shadow-xs">
+            <div className="text-center max-w-xl mx-auto mb-6 space-y-1">
+              <h2 className="font-serif text-xl sm:text-2xl font-semibold text-[#212924]">
+                ¿Cómo realizar tu compra en 4 pasos?
+              </h2>
+              <p className="text-xs text-[#55645a]">
+                Proceso directo, transparente y sin necesidad de crear contraseñas.
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+              <div className="p-4 rounded-2xl bg-[#fbf9f5] border border-[#ece4d8] space-y-2">
+                <div className="w-8 h-8 rounded-lg bg-[#3d5a4c] text-[#dfc89f] font-serif font-bold text-sm flex items-center justify-center">
+                  1
                 </div>
-                <p className="text-xs sm:text-sm text-[#46594d] leading-relaxed">
-                  Tramita tu compra en 1 minuto directamente en esta web. Sin registros forzosos, sin contraseñas y sin salir a aplicaciones externas. Al confirmar, recibirás tu código de comanda oficial e instrucciones para Bizum o pago al recoger en tienda en Boiro.
+                <h4 className="font-serif font-semibold text-xs text-[#212924]">
+                  Elige tus productos
+                </h4>
+                <p className="text-xs text-[#55645a] leading-relaxed">
+                  Añade a tu cesta los aceites botánicos, minerales o saquitos que necesites.
                 </p>
               </div>
-              <button
-                onClick={() => setIsCartOpen(true)}
-                className="inline-flex items-center gap-2 px-4 py-2.5 rounded-2xl bg-[#3d5a4c] hover:bg-[#2d473b] text-white text-xs font-semibold shadow transition-all flex-shrink-0 cursor-pointer"
-              >
-                <ShoppingBag className="w-4 h-4 text-[#dfc89f]" />
-                <span>Ver Cesta ({totalItems})</span>
-              </button>
+
+              <div className="p-4 rounded-2xl bg-[#fbf9f5] border border-[#ece4d8] space-y-2">
+                <div className="w-8 h-8 rounded-lg bg-[#3d5a4c] text-[#dfc89f] font-serif font-bold text-sm flex items-center justify-center">
+                  2
+                </div>
+                <h4 className="font-serif font-semibold text-xs text-[#212924]">
+                  Entrega y Contacto
+                </h4>
+                <p className="text-xs text-[#55645a] leading-relaxed">
+                  Elige <strong>recogida gratis en tienda (Boiro)</strong> o <strong>envío a domicilio</strong> con tus datos.
+                </p>
+              </div>
+
+              <div className="p-4 rounded-2xl bg-[#fbf9f5] border border-[#ece4d8] space-y-2">
+                <div className="w-8 h-8 rounded-lg bg-[#3d5a4c] text-[#dfc89f] font-serif font-bold text-sm flex items-center justify-center shadow-xs">
+                  3
+                </div>
+                <h4 className="font-serif font-semibold text-xs text-[#212924]">
+                  Confirmación en Pantalla
+                </h4>
+                <p className="text-xs text-[#55645a] leading-relaxed">
+                  Tu comanda se registra al instante y recibes en pantalla tu número de pedido oficial (ej. #BYN-8421).
+                </p>
+              </div>
+
+              <div className="p-4 rounded-2xl bg-[#fbf9f5] border border-[#ece4d8] space-y-2">
+                <div className="w-8 h-8 rounded-lg bg-[#3d5a4c] text-[#dfc89f] font-serif font-bold text-sm flex items-center justify-center">
+                  4
+                </div>
+                <h4 className="font-serif font-semibold text-xs text-[#212924]">
+                  Bizum o en Tienda
+                </h4>
+                <p className="text-xs text-[#55645a] leading-relaxed">
+                  Realiza tu Bizum indicando tu número de pedido o abónalo en efectivo/tarjeta al retirar tu paquete en Boiro.
+                </p>
+              </div>
             </div>
           </div>
         </section>
@@ -360,70 +385,6 @@ export const ShopClient: React.FC<ShopClientProps> = ({ config, products, therap
               })}
             </div>
           )}
-        </section>
-
-        {/* Guía en 4 pasos de cómo funciona el pedido */}
-        <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-16">
-          <div className="bg-white rounded-3xl border border-[#ece4d8] p-8 sm:p-12 shadow-xs">
-            <div className="text-center max-w-2xl mx-auto mb-10 space-y-2">
-              <h2 className="font-serif text-2xl sm:text-3xl font-semibold text-[#212924]">
-                ¿Cómo realizar tu compra en 4 pasos?
-              </h2>
-              <p className="text-xs sm:text-sm text-[#55645a]">
-                Comodidad, cercanía y trato directo con tu terapeuta sin intermediarios.
-              </p>
-            </div>
-
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-              <div className="p-5 rounded-2xl bg-[#fbf9f5] border border-[#ece4d8] space-y-3">
-                <div className="w-10 h-10 rounded-xl bg-[#3d5a4c] text-[#dfc89f] font-serif font-bold text-lg flex items-center justify-center">
-                  1
-                </div>
-                <h4 className="font-serif font-semibold text-sm text-[#212924]">
-                  Elige tus productos
-                </h4>
-                <p className="text-xs text-[#55645a] leading-relaxed">
-                  Añade a tu cesta los aceites botánicos, minerales o herramientas que necesitas para tu rutina de relajación.
-                </p>
-              </div>
-
-              <div className="p-5 rounded-2xl bg-[#fbf9f5] border border-[#ece4d8] space-y-3">
-                <div className="w-10 h-10 rounded-xl bg-[#3d5a4c] text-[#dfc89f] font-serif font-bold text-lg flex items-center justify-center">
-                  2
-                </div>
-                <h4 className="font-serif font-semibold text-sm text-[#212924]">
-                  Entrega y Contacto
-                </h4>
-                <p className="text-xs text-[#55645a] leading-relaxed">
-                  Elige <strong>recogida gratis en tienda (Boiro)</strong> o <strong>envío a domicilio</strong>, e indícanos tus datos para enviarte el comprobante.
-                </p>
-              </div>
-
-              <div className="p-5 rounded-2xl bg-[#fbf9f5] border border-[#ece4d8] space-y-3">
-                <div className="w-10 h-10 rounded-xl bg-[#3d5a4c] text-[#dfc89f] font-serif font-bold text-lg flex items-center justify-center shadow-xs">
-                  3
-                </div>
-                <h4 className="font-serif font-semibold text-sm text-[#212924]">
-                  Confirmación en Pantalla
-                </h4>
-                <p className="text-xs text-[#55645a] leading-relaxed">
-                  Tu comanda queda registrada al instante y recibes en pantalla tu número de pedido oficial (ej. #BYN-8421).
-                </p>
-              </div>
-
-              <div className="p-5 rounded-2xl bg-[#fbf9f5] border border-[#ece4d8] space-y-3">
-                <div className="w-10 h-10 rounded-xl bg-[#3d5a4c] text-[#dfc89f] font-serif font-bold text-lg flex items-center justify-center">
-                  4
-                </div>
-                <h4 className="font-serif font-semibold text-sm text-[#212924]">
-                  Bizum o en Mano
-                </h4>
-                <p className="text-xs text-[#55645a] leading-relaxed">
-                  Realiza tu Bizum con tu número de pedido como concepto o abónalo en efectivo/tarjeta al retirar tu paquete en la tienda en Boiro.
-                </p>
-              </div>
-            </div>
-          </div>
         </section>
 
         {/* Banner Cross-Sell: Combina tu compra con una sesión presencial */}
