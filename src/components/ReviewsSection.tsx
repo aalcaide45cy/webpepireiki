@@ -3,6 +3,7 @@
 import React from "react";
 import { Review, SiteConfig } from "@/types/content";
 import { Star, ShieldCheck, Quote, ExternalLink, Sparkles } from "lucide-react";
+import Image from "next/image";
 
 interface ReviewsSectionProps {
   reviews: Review[];
@@ -12,7 +13,17 @@ interface ReviewsSectionProps {
 export const ReviewsSection: React.FC<ReviewsSectionProps> = ({ reviews, config }) => {
   return (
     <section id="resenas" className="py-24 bg-[#fbf9f5] border-t border-[#ece4d8] relative overflow-hidden">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      {/* Rama de hojas de bambú decorativa */}
+      <div className="absolute top-0 left-0 w-44 sm:w-64 h-44 sm:h-64 pointer-events-none opacity-20 lg:opacity-25 mix-blend-multiply select-none">
+        <Image
+          src="/brand/bamboo-branch-left.webp"
+          alt=""
+          fill
+          className="object-contain object-left-top"
+        />
+      </div>
+
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
         {/* Cabecera */}
         <div className="text-center max-w-3xl mx-auto mb-16">

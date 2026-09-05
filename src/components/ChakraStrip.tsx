@@ -3,6 +3,7 @@
 import React, { useState } from "react";
 import { ChakraItem } from "@/types/content";
 import { Sparkles, Info } from "lucide-react";
+import Image from "next/image";
 
 interface ChakraStripProps {
   chakras: ChakraItem[];
@@ -13,7 +14,17 @@ export const ChakraStrip: React.FC<ChakraStripProps> = ({ chakras }) => {
 
   return (
     <section id="chakras" className="py-20 bg-[#f4f0e8]/70 border-y border-[#ece4d8] relative overflow-hidden">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      {/* Rama de hojas de bambú decorativa en esquina superior */}
+      <div className="absolute top-0 right-0 w-44 sm:w-64 h-40 sm:h-56 pointer-events-none opacity-20 lg:opacity-25 mix-blend-multiply select-none">
+        <Image
+          src="/brand/bamboo-branch-right.webp"
+          alt=""
+          fill
+          className="object-contain object-right-top"
+        />
+      </div>
+
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
         {/* Cabecera de la sección */}
         <div className="text-center max-w-3xl mx-auto mb-14">

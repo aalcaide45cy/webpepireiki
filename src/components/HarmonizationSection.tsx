@@ -27,8 +27,26 @@ export const HarmonizationSection: React.FC<HarmonizationSectionProps> = ({ item
       : items.filter((item) => item.category === activeCategory);
 
   return (
-    <section id="armonizacion" className="py-24 bg-[#f4f0e8]/70 border-t border-[#ece4d8]">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="armonizacion" className="py-24 bg-[#f4f0e8]/70 border-t border-[#ece4d8] relative overflow-hidden">
+      {/* Ramas de hojas de bambú decorativas */}
+      <div className="absolute top-0 right-0 w-44 sm:w-64 h-44 sm:h-64 pointer-events-none opacity-20 lg:opacity-25 mix-blend-multiply select-none">
+        <Image
+          src="/brand/bamboo-branch-right.webp"
+          alt=""
+          fill
+          className="object-contain object-right-top"
+        />
+      </div>
+      <div className="absolute bottom-0 left-0 w-44 sm:w-64 h-44 sm:h-64 pointer-events-none opacity-20 lg:opacity-25 mix-blend-multiply select-none">
+        <Image
+          src="/brand/bamboo-branch-left.webp"
+          alt=""
+          fill
+          className="object-contain object-left-bottom"
+        />
+      </div>
+
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
         {/* Cabecera */}
         <div className="text-center max-w-3xl mx-auto mb-14">

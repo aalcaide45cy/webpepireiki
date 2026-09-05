@@ -27,8 +27,26 @@ export const TherapiesSection: React.FC<TherapiesSectionProps> = ({ therapies, o
       : therapies.filter((t) => t.category === selectedFilter);
 
   return (
-    <section id="terapias" className="py-24 bg-[#f4f0e8]/50 border-t border-[#ece4d8]">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="terapias" className="py-24 bg-[#f4f0e8]/50 border-t border-[#ece4d8] relative overflow-hidden">
+      {/* Ramas de bambú en esquinas */}
+      <div className="absolute top-0 left-0 w-44 sm:w-64 h-44 sm:h-64 pointer-events-none opacity-20 lg:opacity-25 mix-blend-multiply select-none">
+        <Image
+          src="/brand/bamboo-branch-left.webp"
+          alt=""
+          fill
+          className="object-contain object-left-top"
+        />
+      </div>
+      <div className="absolute bottom-0 right-0 w-44 sm:w-64 h-44 sm:h-64 pointer-events-none opacity-20 lg:opacity-25 mix-blend-multiply select-none">
+        <Image
+          src="/brand/bamboo-leaves-bottom.webp"
+          alt=""
+          fill
+          className="object-contain object-right-bottom"
+        />
+      </div>
+
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
         {/* Encabezado */}
         <div className="text-center max-w-3xl mx-auto mb-14">
