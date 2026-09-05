@@ -38,7 +38,7 @@ export const LocationSection: React.FC<LocationSectionProps> = ({ config }) => {
   return (
     <section id="contacto" className="py-24 bg-[#fbf9f5] border-t border-[#ece4d8] relative overflow-hidden">
       {/* Rama de hojas de bambú decorativa en esquina superior */}
-      <div className="absolute top-0 right-0 w-44 sm:w-64 h-44 sm:h-64 pointer-events-none opacity-20 lg:opacity-25 mix-blend-multiply select-none">
+      <div className="absolute top-0 right-0 w-44 sm:w-64 h-44 sm:h-64 pointer-events-none opacity-15 lg:opacity-20 z-0 select-none">
         <Image
           src="/brand/bamboo-branch-right.webp"
           alt=""

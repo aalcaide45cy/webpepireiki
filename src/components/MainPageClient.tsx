@@ -37,19 +37,19 @@ export const MainPageClient: React.FC<MainPageClientProps> = ({ data }) => {
   return (
     <div className="relative min-h-screen flex flex-col bg-[#fbf9f5]">
       {/* Cañas de bambú zen ambientales fijas en los bordes de la pantalla (visibles en toda la navegación) */}
-      <div className="hidden lg:block fixed inset-y-0 left-0 w-32 xl:w-44 pointer-events-none z-30 opacity-15 xl:opacity-20 mix-blend-multiply overflow-hidden select-none">
+      <div className="hidden lg:block fixed inset-y-0 left-0 w-32 xl:w-44 pointer-events-none z-0 opacity-15 xl:opacity-20 overflow-hidden select-none">
         <Image
           src="/brand/bamboo-left.webp"
-          alt="Bambú zen lateral izquierdo"
+          alt=""
           fill
           className="object-cover object-left"
           priority
         />
       </div>
-      <div className="hidden lg:block fixed inset-y-0 right-0 w-32 xl:w-44 pointer-events-none z-30 opacity-15 xl:opacity-20 mix-blend-multiply overflow-hidden select-none">
+      <div className="hidden lg:block fixed inset-y-0 right-0 w-32 xl:w-44 pointer-events-none z-0 opacity-15 xl:opacity-20 overflow-hidden select-none">
         <Image
           src="/brand/bamboo-right.webp"
-          alt="Bambú zen lateral derecho"
+          alt=""
           fill
           className="object-cover object-right"
           priority
@@ -60,7 +60,7 @@ export const MainPageClient: React.FC<MainPageClientProps> = ({ data }) => {
       <Navbar config={data.config} onOpenBooking={handleOpenBooking} />
 
       {/* Contenido Principal */}
-      <main className="flex-1">
+      <main className="flex-1 relative z-10">
         <Hero config={data.config} onOpenBooking={() => handleOpenBooking()} />
         <ChakraStrip chakras={data.chakras} />
         <AboutSection config={data.config} onOpenBooking={() => handleOpenBooking()} />

@@ -15,7 +15,7 @@ export const ChakraStrip: React.FC<ChakraStripProps> = ({ chakras }) => {
   return (
     <section id="chakras" className="py-20 bg-[#f4f0e8]/70 border-y border-[#ece4d8] relative overflow-hidden">
       {/* Rama de hojas de bambú decorativa en esquina superior */}
-      <div className="absolute top-0 right-0 w-44 sm:w-64 h-40 sm:h-56 pointer-events-none opacity-20 lg:opacity-25 mix-blend-multiply select-none">
+      <div className="absolute top-0 right-0 w-44 sm:w-64 h-40 sm:h-56 pointer-events-none opacity-15 lg:opacity-20 z-0 select-none">
         <Image
           src="/brand/bamboo-branch-right.webp"
           alt=""

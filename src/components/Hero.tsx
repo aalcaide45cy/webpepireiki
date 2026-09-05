@@ -14,7 +14,7 @@ export const Hero: React.FC<HeroProps> = ({ config, onOpenBooking }) => {
   return (
     <section className="relative pt-32 pb-20 md:pt-40 md:pb-28 overflow-hidden aura-gradient-subtle">
       {/* Cañas de bambú laterales extraídas del logotipo oficial */}
-      <div className="hidden md:block absolute top-0 left-0 w-36 lg:w-48 h-full pointer-events-none opacity-20 lg:opacity-25 mix-blend-multiply -z-0 overflow-hidden select-none">
+      <div className="hidden md:block absolute top-0 left-0 w-36 lg:w-48 h-full pointer-events-none opacity-15 lg:opacity-20 z-0 overflow-hidden select-none">
         <Image
           src="/brand/bamboo-left.webp"
           alt="Bambú natural zen"
@@ -22,7 +22,7 @@ export const Hero: React.FC<HeroProps> = ({ config, onOpenBooking }) => {
           className="object-contain object-left-top"
         />
       </div>
-      <div className="hidden md:block absolute top-0 right-0 w-36 lg:w-48 h-full pointer-events-none opacity-20 lg:opacity-25 mix-blend-multiply -z-0 overflow-hidden select-none">
+      <div className="hidden md:block absolute top-0 right-0 w-36 lg:w-48 h-full pointer-events-none opacity-15 lg:opacity-20 z-0 overflow-hidden select-none">
         <Image
           src="/brand/bamboo-right.webp"
           alt="Bambú natural zen"

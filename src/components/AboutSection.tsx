@@ -125,7 +125,7 @@ export const AboutSection: React.FC<AboutSectionProps> = ({ config, onOpenBookin
           <div className="bg-[#f6f2ea] rounded-3xl p-8 sm:p-12 border border-[#e0d6c5] shadow-md grid grid-cols-1 lg:grid-cols-12 gap-10 items-center relative overflow-hidden">
             
             {/* Bambú tenue decorativo de fondo */}
-            <div className="hidden sm:block absolute -right-6 top-0 w-44 h-full pointer-events-none opacity-15 mix-blend-multiply select-none">
+            <div className="hidden sm:block absolute -right-6 top-0 w-44 h-full pointer-events-none opacity-10 z-0 select-none">
               <Image
                 src="/brand/bamboo-right.webp"
                 alt=""

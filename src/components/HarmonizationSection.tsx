@@ -29,7 +29,7 @@ export const HarmonizationSection: React.FC<HarmonizationSectionProps> = ({ item
   return (
     <section id="armonizacion" className="py-24 bg-[#f4f0e8]/70 border-t border-[#ece4d8] relative overflow-hidden">
       {/* Ramas de hojas de bambú decorativas */}
-      <div className="absolute top-0 right-0 w-44 sm:w-64 h-44 sm:h-64 pointer-events-none opacity-20 lg:opacity-25 mix-blend-multiply select-none">
+      <div className="absolute top-0 right-0 w-44 sm:w-64 h-44 sm:h-64 pointer-events-none opacity-15 lg:opacity-20 z-0 select-none">
         <Image
           src="/brand/bamboo-branch-right.webp"
           alt=""
@@ -37,7 +37,7 @@ export const HarmonizationSection: React.FC<HarmonizationSectionProps> = ({ item
           className="object-contain object-right-top"
         />
       </div>
-      <div className="absolute bottom-0 left-0 w-44 sm:w-64 h-44 sm:h-64 pointer-events-none opacity-20 lg:opacity-25 mix-blend-multiply select-none">
+      <div className="absolute bottom-0 left-0 w-44 sm:w-64 h-44 sm:h-64 pointer-events-none opacity-15 lg:opacity-20 z-0 select-none">
         <Image
           src="/brand/bamboo-branch-left.webp"
           alt=""
